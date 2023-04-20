@@ -1,0 +1,680 @@
+<?xml version="1.0"?>
+
+<!-- schema declaration -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" >
+    <xs:element name="lumrey_store">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="store_heading" />
+                <xs:element ref="store_content" />
+                <xs:element ref="store_footer" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="store_heading">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="heading_max_width" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="heading_max_width">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="heading_logo" />
+                <xs:element ref="heading_link_container" />
+                <xs:element ref="heading_info" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="heading_logo" />
+    
+    <xs:element name="heading_link_container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="heading_link" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="heading_link">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="status" use="optional" default="false" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:attribute name="status" type="xs:boolean" />
+    
+    <xs:element name="heading_info">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="basket" />
+                <xs:element ref="user_profile" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="basket">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="basket_logo_container" />
+                <xs:element ref="basket_drop_content_container" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="basket_logo_container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="basket_logo" />
+                <xs:element ref="basket_total" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="basket_logo" />
+    <xs:element name="basket_total" type="xs:nonNegativeInteger" />
+    
+    <xs:element name="basket_drop_content_container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="basket_drop_content" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="basket_drop_content">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="basket_item" minOccurs="0" maxOccurs="unbounded" />
+                <xs:element ref="go_cart_button" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="basket_item">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="cart_image" />
+                <xs:element ref="cart_product_name" />
+                <xs:element ref="cart_remove_button" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="cart_image">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="xs:string">
+                    <xs:attribute ref="cartProduct" use="required" />
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:attribute name="cartProduct" >
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="([a-zA-Z0-9])*"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:element name="cart_product_name">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:minLength value="5"/>
+                <xs:maxLength value="200"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="cart_remove_button" />
+    <xs:element name="go_cart_button" type="xs:string" />
+    
+    <xs:element name="user_profile">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="user_image_container" />
+                <xs:element ref="user_drop_content_container" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="user_image_container" />
+    
+    <xs:element name="user_drop_content_container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="user_drop_content" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="user_drop_content">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="drop_item" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="drop_item">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="drop_icon" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="drop_icon">
+        <xs:complexType mixed="true">
+            <xs:attribute ref="content" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attribute name="content" type="xs:string" />
+
+    <xs:element name="store_content">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="store_description" />
+                <xs:element ref="store_products" />
+                <xs:element ref="store_pagination" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="store_description">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="description_left" />
+                <xs:element ref="description_right" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="description_left">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="description_heading" />
+                <xs:element ref="description_para" />
+                <xs:element ref="description_button" />
+                <xs:element ref="contacts" />
+                <xs:element ref="social_contacts" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="description_heading" type="xs:string" />
+    <xs:element name="description_para" type="xs:string" />
+    <xs:element name="description_button" type="xs:string" />
+    
+    <xs:element name="contacts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="contact_container" />
+                <xs:element ref="contact_info" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="contact_container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="address" />
+                <xs:element ref="telephone" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="address">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="address_icon" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="address_icon" />
+    
+    <xs:element name="telephone">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="telephone_icon" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="contact_info">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="description_logo" />
+                <xs:element ref="email" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="telephone_icon" />
+    
+    <xs:element name="email">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="email_icon" />
+                <xs:element ref="email_address" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="email_icon" />
+
+    <xs:element name="email_address">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Za-z0-9]+@+gmail+.com|[A-Za-z0-9]+@+yahoo+.com"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:element name="description_logo" />
+    
+    <xs:element name="social_contacts">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="contact" minOccurs="0" maxOccurs="unbounded" />
+            </xs:sequence>
+            <xs:attribute ref="place" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="contact">
+        <xs:complexType>
+            <xs:attribute ref="medium" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attribute name="medium">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:maxLength value="30"/>
+                <xs:whiteSpace value="collapse"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>    
+    
+    <xs:element name="description_right">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="slider_container" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="slider_container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="slider" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="slider">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="slider_image" />
+                <xs:element ref="slider_info" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="slider_image">
+        <xs:complexType mixed="true">
+            <xs:attribute ref="position" use="required" />
+        </xs:complexType>
+    </xs:element>
+
+    <xs:attribute name="position" type="xs:positiveInteger" />
+
+    <xs:element name="slider_info">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="slider_heading" />
+                <xs:element ref="slider_para" />
+                <xs:element ref="slider_btn" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="slider_heading" type="xs:string"/>
+    <xs:element name="slider_para" type="xs:string"/>
+    <xs:element name="slider_btn" type="xs:string"/>
+
+    <xs:element name="store_products">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="product" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="product">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="product_view" />
+                <xs:element ref="product_specification" />
+            </xs:sequence>
+            <xs:attribute ref="product" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:attribute name="product" type="xs:string" />
+    
+    <xs:element name="product_view">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="product_image_container" />
+                <xs:element ref="product_button_container" />
+            </xs:sequence>
+            <xs:attribute ref="product" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="product_image_container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="product_image" />
+                <xs:element ref="product_hover" />
+            </xs:sequence>
+            <xs:attribute ref="product" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="product_image" />
+    
+    <xs:element name="product_hover">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="product_preview" />
+                <xs:element ref="product_wishlist" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="product_preview">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="preview_icon" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="preview_icon" />
+    
+    <xs:element name="product_wishlist">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="wishlist_icon" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="wishlist_icon" />
+    
+    <xs:element name="product_button_container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="buy_button" />
+                <xs:element ref="add_cart_button" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="buy_button" type="xs:string" />
+    <xs:element name="add_cart_button" type="xs:string" />
+    
+    <xs:element name="product_specification">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="specification_container" minOccurs="1" maxOccurs="unbounded" />
+                <xs:element ref="discount_option" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="offer_option" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="refund_option" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="delivery_option" minOccurs="0" maxOccurs="1" />
+                <xs:element ref="return_option" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="specification_container">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="specification_question" />
+                <xs:element ref="specification_answer" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="specification_question" type="xs:string" />
+    <xs:element name="specification_answer" type="xs:string" />
+    
+    <xs:element name="discount_option">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="discount" />
+                <xs:element ref="discount_rate" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="discount" type="xs:string" />
+    <xs:element name="discount_rate" type="xs:string" />
+    
+    <xs:element name="offer_option">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="offer" />
+                <xs:element ref="percent" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="offer" type="xs:string" />
+    <xs:element name="percent" type="xs:string" />
+    
+    <xs:element name="refund_option">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="refund" />
+                <xs:element ref="percent" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="refund" type="xs:string" />
+    
+    <xs:element name="delivery_option">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="delivery" />
+                <xs:element ref="delivery_time" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="delivery" type="xs:string" />
+    <xs:element name="delivery_time" type="xs:string" />
+    
+    <xs:element name="return_option">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="return" />
+                <xs:element ref="return_time" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="return" type="xs:string" />
+    <xs:element name="return_time" type="xs:string" />
+    
+    <xs:element name="store_pagination">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="prev_btn" />
+                <xs:element ref="pages" />
+                <xs:element ref="next_btn" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="prev_btn" type="xs:string" />
+    <xs:element name="next_btn" type="xs:string" />
+    
+    <xs:element name="pages">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="page" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="page">
+        <xs:complexType mixed="true">
+            <xs:attribute ref="pageStatus" use="optional" />
+            <xs:attribute ref="type" use="optional" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:attribute name="pageStatus" type="xs:string" />
+    <xs:attribute name="type" type="xs:string" />
+    
+    <xs:element name="store_footer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="footer_max_width" />
+                <xs:element ref="copyright" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="footer_max_width">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="info_footer" />
+                <xs:element ref="customer_footer" />
+                <xs:element ref="company_footer" />
+                <xs:element ref="contact_footer" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="info_footer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="footer_logo" />
+                <xs:element ref="footer_description" />
+                <xs:element ref="social_contacts" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="footer_logo" />
+    <xs:element name="footer_description" type="xs:string" />
+    <xs:attribute name="place" default="top" type="xs:string" />
+    
+    <xs:element name="customer_footer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="section_heading" />
+                <xs:element ref="section_lists" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="section_heading" type="xs:string" />
+    
+    <xs:element name="section_lists">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="section_list" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="section_list" type="xs:string" />
+    
+    <xs:element name="company_footer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="section_heading" />
+                <xs:element ref="section_lists" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="contact_footer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="section_heading" />
+                <xs:element ref="contact_us" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="contact_us">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="footer_details" minOccurs="1" maxOccurs="unbounded" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="footer_details">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="footer_icon" />
+                <xs:element ref="footer_mail" minOccurs="0" maxOccurs="1" />
+            </xs:sequence>
+            <xs:attribute ref="email" use="optional" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:attribute name="email" type="xs:boolean" default="false" />
+    
+    <xs:element name="footer_icon">
+        <xs:complexType>
+            <xs:attribute ref="icon" />
+        </xs:complexType>
+    </xs:element>
+    
+    <xs:element name="footer_mail">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:pattern value="[A-Za-z]+@+lumrey.store" />
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:element>
+
+    <xs:attribute name="icon" default="lumrey">
+        <xs:simpleType>
+            <xs:restriction base="xs:string">
+                <xs:whiteSpace value="collapse"/>
+            </xs:restriction>
+        </xs:simpleType>
+    </xs:attribute>
+    
+    <xs:element name="copyright">
+        <xs:complexType mixed="true">
+            <xs:sequence>
+                <xs:element ref="social_contacts" />
+            </xs:sequence>
+            <xs:attribute ref="place" />
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,547 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- 
+    Name: Ashok Lama
+    LondonMetId: 20048836
+    collegeId: NP01CP4S210119
+    description: 
+ -->
+
+<!-- linking the external css in the file -->
+<?xml-stylesheet href="./catalog_20048836.css" type="text/css"?>
+
+<!-- 
+    making the root tag lumrey_store containing 
+    the store_heading, store_content and store_fooer 
+    also adding the schema in the root tag
+-->
+<lumrey_store xsi:noNamespaceSchemaLocation="catalog_20048836.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+    <!--     
+        making the heading element containing the
+        heading_max_width which contains all the 
+        element like logo, navigation and profile and basket 
+    -->
+    <store_heading>
+        <heading_max_width>
+
+            <!-- making the logo of the page using the empty tag -->
+            <heading_logo/>
+
+            <!-- making the navigation link container containing the multiple links -->
+            <heading_link_container>
+                <heading_link status="true">Home</heading_link>
+                <heading_link>About us</heading_link>
+                <heading_link>Services</heading_link>
+                <heading_link>Contact us</heading_link>
+                <heading_link>Checkout</heading_link>
+            </heading_link_container>
+
+            <!--     
+                making the shortcut navigation
+                containing basket and profile
+                with the dropdown contents
+             -->
+            <heading_info>
+
+                <!-- making the gift card basket with dropdown contents -->
+                <basket>
+                    <basket_logo_container>
+                        <basket_logo/>
+                        <basket_total>3</basket_total>
+                    </basket_logo_container>
+    
+                    <basket_drop_content_container>
+                        <basket_drop_content>
+                            <basket_item>
+                                <cart_image cartProduct="myntra" />
+                                <cart_product_name>Myntra Digital Gift Card 20% off discount in any product</cart_product_name>
+                                <cart_remove_button/>
+                            </basket_item>
+                            <basket_item>
+                                <cart_image cartProduct="bigBazar" />
+                                <cart_product_name>Big Bazaar Gigital Gift Card Rs 20,000 free purchase</cart_product_name>
+                                <cart_remove_button/>
+                            </basket_item>
+                            <basket_item>
+                                <cart_image cartProduct="archies" />
+                                <cart_product_name>Archies Physical Gift</cart_product_name>
+                                <cart_remove_button/>
+                            </basket_item>
+                            <go_cart_button>Go To Cart</go_cart_button>
+                        </basket_drop_content>
+                    </basket_drop_content_container>
+                </basket>
+    
+                <!-- making the user_profile with drop down contents -->
+                <user_profile>
+                    <user_image_container>
+                        <user_image/>
+                    </user_image_container>
+                    <user_drop_content_container>
+                        <user_drop_content>
+                            <drop_item>
+                                <drop_icon content="user"/>
+                                My Profile
+                            </drop_item>
+                            <drop_item>
+                                <drop_icon content="wishlist"/>
+                                Wishlists
+                            </drop_item>
+                            <drop_item>
+                                <drop_icon content="order"/>
+                                Orders
+                            </drop_item>
+                            <drop_item>
+                                <drop_icon content="offer"/>
+                                Offers
+                            </drop_item>
+                            <drop_item>
+                                <drop_icon content="setting"/>
+                                Setting
+                            </drop_item>
+                            <drop_item>
+                                <drop_icon content="logout"/>
+                                Logout
+                            </drop_item>
+                        </user_drop_content>
+                    </user_drop_content_container>
+                </user_profile>
+            </heading_info>
+        </heading_max_width>
+    </store_heading>
+
+    <!-- 
+        making the store content containing the 
+        description of the store and the list of
+        five products and pagination button 
+    -->
+    <store_content>
+
+        <!-- 
+            making the store description right and left
+            left containing the slider and right containing 
+            the details of the store and social links
+         -->
+        <store_description>
+            <description_left>
+                <description_heading>Lumrey Gift Store</description_heading>
+                <description_para>We are the top seller of the gift cards. We provide the best deals in every product we sell. Having the customer satisfaction is our main motto. We aim to provide the best service for all customer. We are one of the best store for shipping and delivery.</description_para>
+                <description_button>Learn More</description_button>
+                <contacts>
+                    <contact_container>
+                        <address><address_icon/>Kathmandu, Nepal</address>
+                        <telephone><telephone_icon/>+977 1234 5678</telephone>
+                    </contact_container>
+                    
+                    <contact_info>
+                        <description_logo/>
+                        <email><email_icon/><email_address>moktashok@gmail.com</email_address></email>
+                    </contact_info>
+                </contacts>
+                <social_contacts>
+                    <contact medium="facebook" />
+                    <contact medium="instagram" />
+                    <contact medium="twitter" />
+                    <contact medium="whatsapp" />
+                    <contact medium="tiktok" />
+                </social_contacts>
+            </description_left>
+            <description_right>
+                <slider_container>
+                    <slider>
+                        <slider_image position="1" />
+                        <slider_info>
+                            <slider_heading>Amazon Black Friday Sale</slider_heading>
+                            <slider_para>
+                                Here the black friday sale get your best deals at every emazon product. Grab all the products for reasonable and best quality at amazon.
+                            </slider_para>
+                            <slider_btn>Explore ></slider_btn>
+                        </slider_info>
+                    </slider>
+                    <slider>
+                        <slider_image position="2" />
+                        <slider_info>
+                            <slider_heading>Christmas Thanks Giving</slider_heading>
+                            <slider_para>
+                                No wait for Black Friday sale grab all the products in lumrey gift store for reasonable price. This is the offer for the christmas grab your gifts for christmas Merry Christmas.
+                            </slider_para>
+                            <slider_btn>Explore ></slider_btn>
+                        </slider_info>
+                    </slider>
+                    <slider>
+                        <slider_image position="3" />
+                        <slider_info>
+                            <slider_heading>Black Friday Sale</slider_heading>
+                            <slider_para>
+                                Enjoy your one day sale in lumrey Store. Get all the deals at the reasonable prices. Get your best deals for today and get the 25% cashback for every online purchase. 
+                            </slider_para>
+                            <slider_btn>Explore ></slider_btn>
+                        </slider_info>
+                    </slider>
+                </slider_container>
+            </description_right>
+        </store_description>
+
+        <!-- 
+            making the store products with the
+            product description and product image
+            product can have wishlst and preview icons
+            and purchase and add to cart buttons 
+            product specification has the list of the details 
+            of the product
+        -->
+        <store_products>
+            <product product="product1">
+                <product_view>
+                    <product_image_container>
+                        <product_image/>
+                        <product_hover>
+                            <product_preview><preview_icon/> Preview</product_preview>
+                            <product_wishlist><wishlist_icon/> Wishlist</product_wishlist>
+                        </product_hover>
+                    </product_image_container>
+                    <product_button_container>
+                        <buy_button>Purchase</buy_button>
+                        <add_cart_button>Add to Cart</add_cart_button>
+                    </product_button_container>
+                </product_view>
+                <product_specification>
+                    <specification_container>
+                        <specification_question>Name : </specification_question>
+                        <specification_answer>Netflix Gift Card</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Brand : </specification_question>
+                        <specification_answer>Netflix</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Type : </specification_question>
+                        <specification_answer>Digital</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Validity : </specification_question>
+                        <specification_answer>6 Months</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Maximum User : </specification_question>
+                        <specification_answer>4</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Accepted For : </specification_question>
+                        <specification_answer>Bill Payment</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Delivery : </specification_question>
+                        <specification_answer>Netflix Account</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Denomination : </specification_question>
+                        <specification_answer>$ 120</specification_answer>
+                    </specification_container>
+                    <discount_option>
+                        <discount>Discount : </discount>
+                        <discount_rate>25%</discount_rate>
+                    </discount_option>
+                </product_specification>
+            </product>
+            <product product="product2">
+                <product_view>
+                    <product_image_container>
+                        <product_image/>
+                        <product_hover>
+                            <product_preview><preview_icon/> Preview</product_preview>
+                            <product_wishlist><wishlist_icon/> Wishlist</product_wishlist>
+                        </product_hover>
+                    </product_image_container>
+                    <product_button_container>
+                        <buy_button>Purchase</buy_button>
+                        <add_cart_button>Add to Cart</add_cart_button>
+                    </product_button_container>
+                </product_view>
+                <product_specification>
+                    <specification_container>
+                        <specification_question>Name : </specification_question>
+                        <specification_answer>Itunes Gift Card</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Brand : </specification_question>
+                        <specification_answer>Apple</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Type : </specification_question>
+                        <specification_answer>Physical</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Validity : </specification_question>
+                        <specification_answer>1 Year</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Maximum User : </specification_question>
+                        <specification_answer>1</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Accepted For : </specification_question>
+                        <specification_answer>Apple Product</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Delivery : </specification_question>
+                        <specification_answer>Home</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Denomination : </specification_question>
+                        <specification_answer>$ 50</specification_answer>
+                    </specification_container>
+                    <offer_option>
+                        <offer>Offer : </offer>
+                        <percent>25% Cash Back</percent>
+                    </offer_option>
+                </product_specification>
+            </product>
+            <product product="product3">
+                <product_view>
+                    <product_image_container>
+                        <product_image/>
+                        <product_hover>
+                            <product_preview><preview_icon/> Preview</product_preview>
+                            <product_wishlist><wishlist_icon/> Wishlist</product_wishlist>
+                        </product_hover>
+                    </product_image_container>
+                    <product_button_container>
+                        <buy_button>Purchase</buy_button>
+                        <add_cart_button>Add to Cart</add_cart_button>
+                    </product_button_container>
+                </product_view>
+                <product_specification>
+                    <specification_container>
+                        <specification_question>Name : </specification_question>
+                        <specification_answer>Google Play</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Brand : </specification_question>
+                        <specification_answer>Google</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Type : </specification_question>
+                        <specification_answer>Digital</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Validity : </specification_question>
+                        <specification_answer>7 Months</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Maximum User : </specification_question>
+                        <specification_answer>2</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Accepted For : </specification_question>
+                        <specification_answer>Playstore Purchase</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Delivery : </specification_question>
+                        <specification_answer>G-Mail</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Denomination : </specification_question>
+                        <specification_answer>$ 50</specification_answer>
+                    </specification_container>
+                    <refund_option>
+                        <refund>Refund Policy : </refund>
+                        <percent>70% cash back</percent>
+                    </refund_option>
+                </product_specification>
+            </product>
+            <product product="product4">
+                <product_view>
+                    <product_image_container>
+                        <product_image/>
+                        <product_hover>
+                            <product_preview><preview_icon/> Preview</product_preview>
+                            <product_wishlist><wishlist_icon/> Wishlist</product_wishlist>
+                        </product_hover>
+                    </product_image_container>
+                    <product_button_container>
+                        <buy_button>Purchase</buy_button>
+                        <add_cart_button>Add to Cart</add_cart_button>
+                    </product_button_container>
+                </product_view>
+                <product_specification>
+                    <specification_container>
+                        <specification_question>Name : </specification_question>
+                        <specification_answer>Roblox Card</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Brand : </specification_question>
+                        <specification_answer>Roblox</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Type : </specification_question>
+                        <specification_answer>Physical</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Validity : </specification_question>
+                        <specification_answer>11 Months</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Maximum User : </specification_question>
+                        <specification_answer>1</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Accepted For : </specification_question>
+                        <specification_answer>Game Purchase</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Delivery : </specification_question>
+                        <specification_answer>Home</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Denomination : </specification_question>
+                        <specification_answer>$ 50</specification_answer>
+                    </specification_container>
+                    <delivery_option>
+                        <delivery>Delivery Time : </delivery>
+                        <delivery_time>3 Days</delivery_time>
+                    </delivery_option>
+                </product_specification>
+            </product>
+            <product product="product5">
+                <product_view>
+                    <product_image_container>
+                        <product_image/>
+                        <product_hover>
+                            <product_preview><preview_icon/> Preview</product_preview>
+                            <product_wishlist><wishlist_icon/> Wishlist</product_wishlist>
+                        </product_hover>
+                    </product_image_container>
+                    <product_button_container>
+                        <buy_button>Purchase</buy_button>
+                        <add_cart_button>Add to Cart</add_cart_button>
+                    </product_button_container>
+                </product_view>
+                <product_specification>
+                    <specification_container>
+                        <specification_question>Name : </specification_question>
+                        <specification_answer>Amazon.com eGift Card</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Brand : </specification_question>
+                        <specification_answer>Amazon</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Type : </specification_question>
+                        <specification_answer>Digital</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Validity : </specification_question>
+                        <specification_answer>2 Months</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Maximum User : </specification_question>
+                        <specification_answer>1</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Accepted For : </specification_question>
+                        <specification_answer>Online Payment</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Delivery : </specification_question>
+                        <specification_answer>G-Mail</specification_answer>
+                    </specification_container>
+                    <specification_container>
+                        <specification_question>Denomination : </specification_question>
+                        <specification_answer>$ 50</specification_answer>
+                    </specification_container>
+                    <return_option>
+                        <return>Return Policy : </return>
+                        <return_time>Within 3 Days</return_time>
+                    </return_option>
+                </product_specification>
+            </product>
+        </store_products>
+        
+        <!-- making the pagination for the products -->
+        <store_pagination>
+            <prev_btn>Prev</prev_btn>
+            <pages>
+                <page>1</page>
+                <page pageStatus="active">2</page>
+                <page>3</page>
+                <page type="continue">...</page>
+                <page>10</page>
+            </pages>
+            <next_btn>Next</next_btn>
+        </store_pagination>
+    </store_content>
+
+    <!-- 
+        making the store footer containing 
+        the store services and copyright warnings
+        store service includes the contact details, 
+        information and policy of the store and the
+        customer service. 
+    -->
+    <store_footer>
+        <footer_max_width>
+            <info_footer>
+                <footer_logo/>
+                <footer_description>
+                    Lumret Gift Store is the Nepal's top gift store which gives the user the best product in reasonable price.
+                </footer_description>
+                <social_contacts place="footer">
+                    <contact medium="facebook" />
+                    <contact medium="instagram" />
+                    <contact medium="twitter" />
+                    <contact medium="whatsapp" />
+                    <contact medium="tiktok" />
+                </social_contacts>
+            </info_footer>
+            <customer_footer>
+                <section_heading>
+                    CUSTOMER SERVICE
+                </section_heading>
+                <section_lists>
+                    <section_list>Customer Support</section_list>
+                    <section_list>Affiliate Program</section_list>
+                    <section_list>Blog</section_list>
+                    <section_list>Contact us</section_list>
+                    <section_list>Customer Care</section_list>
+                </section_lists>
+            </customer_footer>
+            <company_footer>
+                <section_heading>
+                    INFORMATION
+                </section_heading>
+                <section_lists>
+                    <section_list>Privacy</section_list>
+                    <section_list>FAQ</section_list>
+                    <section_list>Return and Refund Policy</section_list>
+                    <section_list>Terms and Conditions</section_list>
+                    <section_list>Careers</section_list>
+                    <section_list>About Us</section_list>
+                </section_lists>
+            </company_footer>
+            <contact_footer>
+                <section_heading>
+                    CONTACT US
+                </section_heading>
+                <contact_us>
+                    <footer_details><footer_icon icon="phone" />1-800-660-0464</footer_details>
+                    <footer_details email="true"><footer_icon icon="mail" /><footer_mail>support@lumrey.store</footer_mail></footer_details>
+                    <footer_details><footer_icon icon="location" />Nepal Kathmandu</footer_details>
+                    <footer_details><footer_icon icon="time" />Mon-Fri, 9AM - 10PM</footer_details>
+                </contact_us>
+            </contact_footer>
+        </footer_max_width>
+        
+        <copyright>
+            Copyright &#169; 2021 Lumrey Store Ashok Lama
+            <social_contacts place="copyright">
+                <contact medium="facebook" />
+                <contact medium="instagram" />
+                <contact medium="twitter" />
+                <contact medium="whatsapp" />
+                <contact medium="tiktok" />
+            </social_contacts>
+        </copyright>
+    </store_footer>
+</lumrey_store>
